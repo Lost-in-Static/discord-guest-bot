@@ -4,7 +4,9 @@ const { token } = require('./config.json')
 
 console.log('Booting the Bot')
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] })
+const client = new Client({
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.DIRECT_MESSAGES],
+})
 
 client.commands = new Collection()
 const commandFiles = fs
@@ -17,6 +19,7 @@ for (const file of commandFiles) {
 }
 
 client.on('interactionCreate', async (interaction) => {
+    console.log('Interagiram comigo')
     if (!interaction.isCommand()) return
 
     const command = client.commands.get(interaction.commandName)
@@ -32,6 +35,10 @@ client.on('interactionCreate', async (interaction) => {
             ephemeral: true,
         })
     }
+})
+
+client.on('messageCreate', async () => {
+    console.log('mensajaram-me')
 })
 
 client.once('ready', () => {
