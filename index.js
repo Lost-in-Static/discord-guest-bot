@@ -19,7 +19,6 @@ for (const file of commandFiles) {
 }
 
 client.on('interactionCreate', async (interaction) => {
-    console.log('Interagiram comigo')
     if (!interaction.isCommand()) return
 
     const command = client.commands.get(interaction.commandName)
