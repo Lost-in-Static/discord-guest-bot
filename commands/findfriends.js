@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('voiceglobal')
+        .setName('findfriends')
         .setDescription('Shows members in all mutual Voice Channels'),
     execute: async (interaction) => {
         const guilds = interaction.client.guilds.cache
@@ -22,7 +22,7 @@ module.exports = {
                             name: guild.name,
                             voiceChannels,
                         }
-                    } catch (e) {}
+                    } catch (e) { }
                 })
             )
         ).filter((guild) => guild !== undefined && guild.voiceChannels.size > 0)

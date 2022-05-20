@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('Help')
+        .setName('help')
         .setDescription('Display all commands from BOT'),
     execute: async (interaction) => {
         await interaction.reply(`The BOT has the following commands: 
