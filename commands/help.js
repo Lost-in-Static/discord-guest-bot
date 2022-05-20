@@ -11,11 +11,7 @@ module.exports = {
 
 /PING (Guild / Whisper) --- Returns your Ping. Use it to confirm that the BOT is properly configured.
 
-/SERVER (Guild) --- Displays the current Guild name & Total Members.
-
-/VOICE (Guild) --- LEGACY COMMAND --- Displays all Voice channels that contain users and the users connected to them on the Guild the slash-command is ran.
-
-/VOICEGLOBAL (Whisper) --- Displays all Voice Channels that contain users and the users connected accross all Guilds you and this BOT share.
+/FINDFRIENDS (Whisper) --- Displays all Voice Channels that contain users and the users connected accross all Guilds you and this BOT share.
 `)
     }
 }
