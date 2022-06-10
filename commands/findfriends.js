@@ -37,6 +37,11 @@ module.exports = {
             (guild) => guild !== undefined && guild.voiceChannels.length > 0
         )
 
+        if (mutualGuilds.length === 0) {
+            await interaction.reply("Nobody's home")
+            return
+        }
+
         const reply = mutualGuilds
             .map((guild) => {
                 const channelsMessage = guild.voiceChannels
